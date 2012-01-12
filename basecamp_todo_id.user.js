@@ -3,7 +3,7 @@
 // @name           Basecamp Todo ID
 // @description    Shows the todo id in basecamp
 // @include        https://*.basecamphq.com/*
-// @version        1.3
+// @version        1.3.1
 // ==/UserScript==
 
 (function () {
@@ -29,7 +29,7 @@
   
     span  = document.getElementById('list_17801514_item_' + itemId + '_text');
     style = 'background:#aaa;color:white;border-radius:1em;text-decoration:none;padding:0.2em 1em;font-size:0.8em;margin:0 0.3em;';
-    url   = baseUrl + '/todo_items/'+itemId+'/comments');
+    url   = baseUrl + '/todo_items/' + itemId + '/comments';
     id    = 'basecamp-todo-id-extension-'+itemId;
     func  = 'document.getElementById(\"'+id+'\").select();document.execCommand(\"Copy\");'
     
