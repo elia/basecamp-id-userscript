@@ -2,7 +2,8 @@
 // @name           Basecamp Todo ID
 // @namespace      de.knuspermagier
 // @description    Shows the todo id in basecamp
-// @include        https://quotefm.basecamphq.com/*
+// @include        https://*.basecamphq.com/*
+// @version        1.1
 // ==/UserScript==
 
 var items = document.getElementsByTagName("div");
