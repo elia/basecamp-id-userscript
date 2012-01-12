@@ -3,11 +3,14 @@
 // @name           Basecamp Todo ID
 // @description    Shows the todo id in basecamp
 // @include        https://*.basecamphq.com/*
-// @version        1.2
+// @version        1.1
 // ==/UserScript==
 
 (function () {
-  var items, i, item, link, itemId, span, style, copyLink, label;
+  var items, i, item, link, itemId, span, style, copyLink, label, baseUrl;
+  
+  baseUrl = window.location.href.replace(/(projects\/\d+[^\/]+\/).*$/, '$1');
+
   
   items = document.getElementsByTagName("div");
 
@@ -26,7 +29,7 @@
   
     span  = document.getElementById('list_17801514_item_' + itemId + '_text');
     style = 'background:#aaa;color:white;border-radius:1em;text-decoration:none;padding:0.2em 1em;font-size:0.8em;margin:0 0.3em;';
-    url   = window.location.href.replace(/(projects\/\d+[^\/]+\/).*$/, '$1/todo_items/'+itemId+'/comments');
+    url   = baseUrl + '/todo_items/'+itemId+'/comments');
     id    = 'basecamp-todo-id-extension-'+itemId;
     func  = 'document.getElementById(\"'+id+'\").select();document.execCommand(\"Copy\");'
     
@@ -35,5 +38,7 @@
     copyLink = '<a style="'+style+'" onclick="'+func+'">&rarr; clipboard</a>'
     span.innerHTML = span.innerHTML+label;
   }
-
+  
+  
+  // document.body.innerHTML = document.body.innerHTML.replace(/#(\d+)\b/g, '<a href="'+baseUrl+'/todo_items/$1/comments">#$1</a>')
 })();
