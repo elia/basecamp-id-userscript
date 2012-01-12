@@ -3,7 +3,7 @@
 // @name           Basecamp Todo ID
 // @description    Shows the todo id in basecamp
 // @include        https://*.basecamphq.com/*
-// @version        1.1
+// @version        1.3
 // ==/UserScript==
 
 (function () {
